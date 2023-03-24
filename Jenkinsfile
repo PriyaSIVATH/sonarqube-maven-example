@@ -1,9 +1,16 @@
 pipeline { 
     // agent any
     // docker { image 'ubuntu:latest' }
+    // agent {
+    //     docker { image 'maven:amazoncorretto' }  
+    //  }
     agent {
-        docker { image 'maven:amazoncorretto' }  
-     }
+        docker {
+            image 'maven:amazoncorretto'
+            label 'docker-vm'
+            // label 'docker-agent1'
+        }
+    }
     tools {
         maven 'mvn-3.9.0'
     }
