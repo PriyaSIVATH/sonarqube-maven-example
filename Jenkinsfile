@@ -61,7 +61,8 @@ pipeline {
                 nexusArtifactUploader artifacts: [
                     [   artifactId: 'sonarqube-maven-example', 
                         classifier: '', 
-                        file: 'target/sonarqube-maven-example-1.0-SNAPSHOT${tagName}.jar', 
+                        // file: 'target/sonarqube-maven-example-1.0-SNAPSHOT${tagName}.jar',
+                        file: 'target/sonarqube-maven-example-1.0-SNAPSHOT.jar', 
                         type: 'jar' ]
                         ],  credentialsId: 'nexus-repo-manager', 
                             groupId: 'com.sonarqube.example', 
