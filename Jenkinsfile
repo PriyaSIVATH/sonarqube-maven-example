@@ -28,22 +28,22 @@ pipeline {
         //     }
         //  }
 
-        stage('Artifact Upload to Nexus3') {
-            steps {
-                nexusArtifactUploader artifacts: [
-                    [   artifactId: 'sonarqube-maven-example', 
-                        classifier: '', 
-                        file: 'target/sonarqube-maven-example-1.0-SNAPSHOT.jar', 
-                        type: 'jar' ]
-                        ],  credentialsId: 'nexus-repo-manager', 
-                            groupId: 'com.sonarqube.example', 
-                            nexusUrl: '192.168.0.155:8081', 
-                            nexusVersion: 'nexus3', 
-                            protocol: 'http', 
-                            repository: 'my-maven-repo', 
-                            version: '1.0-SNAPSHOT'
-            }
-         }
+        // stage('Artifact Upload to Nexus3') {
+        //     steps {
+        //         nexusArtifactUploader artifacts: [
+        //             [   artifactId: 'sonarqube-maven-example', 
+        //                 classifier: '', 
+        //                 file: 'target/sonarqube-maven-example-1.0-SNAPSHOT.jar', 
+        //                 type: 'jar' ]
+        //                 ],  credentialsId: 'nexus-repo-manager', 
+        //                     groupId: 'com.sonarqube.example', 
+        //                     nexusUrl: '192.168.0.155:8081', 
+        //                     nexusVersion: 'nexus3', 
+        //                     protocol: 'http', 
+        //                     repository: 'my-maven-repo', 
+        //                     version: '1.0-SNAPSHOT'
+        //     }
+        //  }
         
     }
 }
