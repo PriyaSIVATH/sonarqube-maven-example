@@ -21,6 +21,16 @@ pipeline {
                 '''
             }
         }
+
+        stage('SonarQube Quality Check') {
+            steps {
+                withSonarQubeEnv('sonarqube1') {
+                     sh '''
+                        mvn sonar:sonar
+                     '''
+                }
+            }
+        }
         
         // stage('Archive Artifact') {
         //     steps {
