@@ -22,11 +22,11 @@ pipeline {
             }
         }
         
-        stage('Archive Artifact') {
-            steps {
-                archiveArtifacts(artifacts: '**/*.jar', followSymlinks: false)
-            }
-         }
+        // stage('Archive Artifact') {
+        //     steps {
+        //         archiveArtifacts(artifacts: '**/*.jar', followSymlinks: false)
+        //     }
+        //  }
 
         stage('Artifact Upload to Nexus3') {
             steps {
