@@ -11,6 +11,9 @@ pipeline {
             // label 'docker-agent1'
         }
     }
+    environment {
+        tagName = "build.${BUILD_NUMBER}"
+    }
     tools {
         maven 'mvn-3.9.0'
     }
@@ -58,7 +61,7 @@ pipeline {
                 nexusArtifactUploader artifacts: [
                     [   artifactId: 'sonarqube-maven-example', 
                         classifier: '', 
-                        file: 'target/sonarqube-maven-example-1.0-SNAPSHOT.jar', 
+                        file: 'target/sonarqube-maven-example-1.0-SNAPSHOT${tagName}.jar', 
                         type: 'jar' ]
                         ],  credentialsId: 'nexus-repo-manager', 
                             groupId: 'com.sonarqube.example', 
