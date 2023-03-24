@@ -38,6 +38,14 @@ pipeline {
                 }
             }
         }
+
+        stage("Quality-Gate Status") {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                 waitForQualityGate abortPipeline: true
+                }
+            }
+        }
         
         // stage('Archive Artifact') {
         //     steps {
